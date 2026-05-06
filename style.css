@@ -1,0 +1,141 @@
+:root {
+    --main-bg: #1a1e23;       /*for bg */
+    --card-bg: #252b33;       /*for cards */
+    --accent-blue: #3498db;   /* for main btn */
+    --light-blue: #a5d8ff;    /* for text */
+    --text-white: #ffffff;
+    --text-dim: #b0b8c1;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-white);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: #1a1e23;
+    padding: 15px 10%;
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+}
+nav { 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+ }
+nav .logo img{
+    width: 140px;
+    height: 65px;
+    /* border: 1px solid white; */
+    border-radius: 50px;
+}
+nav ul {
+    display: flex; 
+    list-style: none; 
+}
+nav ul li { 
+    margin-left: 25px; 
+}
+nav ul li a { 
+    color: var(--text-dim); 
+    text-decoration: none; 
+    transition: 0.3s; 
+}
+nav ul li a:hover { 
+    color: var(--accent-blue); 
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex; align-items: center;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #1a1e23 0%, #102a43 100%); /* تدرج أزرق غامق */
+}
+.hero-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+}
+.hero-content .description{
+    /* color:red;
+    margin-right: 20px; */
+}
+.hero-content h1 { 
+    font-size: 3rem; 
+    color: var(--accent-blue); }
+.subtitle { 
+    color: var(--light-blue); 
+    margin-bottom: 15px; }
+.hero-img img {
+    width: 300px; height: 300px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* شكل فني منحني مثل الصورة */
+    border: 5px solid var(--accent-blue);
+    object-fit: cover;
+}
+
+/* Common Sections */
+section { padding: 100px 10%; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: var(--accent-blue); }
+
+/* Skills & Projects Grid */
+.skills-grid, .projects-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
+}
+
+.skill-card, .project-item {
+    background: var(--card-bg);
+    padding: 25px; border-radius: 20px;
+    text-align: center; transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.skill-card:hover, .project-item:hover { transform: translateY(-10px); border-color: var(--accent-blue); }
+.skill-card i { font-size: 3rem; color: var(--accent-blue); margin-bottom: 15px; }
+
+/* Project Image Style */
+.project-img-placeholder {
+    width: 100%; height: 150px;
+    background: #102a43; border-radius: 15px;
+    margin-bottom: 15px; overflow: hidden;
+}
+.project-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Buttons */
+.btn {
+    padding: 10px 25px; border-radius: 25px;
+    text-decoration: none; display: inline-block; margin-top: 10px;
+}
+.btn-primary { background: var(--accent-blue); color: white; border: none; }
+.btn-outline { border: 2px solid var(--accent-blue); color: var(--accent-blue); }
+.btn-project {
+    display: block; background: var(--accent-blue); color: white;
+    padding: 10px; border-radius: 10px; text-decoration: none; margin-top: 15px;
+}
+
+/* Contact Section */
+.contact-container {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    background: var(--card-bg); padding: 40px; border-radius: 30px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%; padding: 12px; margin-bottom: 15px;
+    background: #1a1e23; border: 1px solid #333;
+    border-radius: 10px; color: white;
+}
+.social-links a { font-size: 1.5rem; color: var(--accent-blue); margin-right: 15px; }
+
+footer { text-align: center; padding: 40px; color: var(--text-dim); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container, .contact-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-container { flex-direction: column-reverse; }
+}
